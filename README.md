@@ -17,6 +17,7 @@ This project is a collection of Python projects.
     python easy/dice_rolling_simulator.py
     python easy/guess_the_number.py
     python easy/mad_libs_generator.py
+    python easy/rock_paper_scissors.py
 ```
 
 # Example Usage
