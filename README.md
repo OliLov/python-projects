@@ -4,20 +4,33 @@ This project is a collection of Python projects.
 
 ## Projects
 
+### python-projects/easy
+
 - Calculator: Performs basic arithmetic operations like addition, subtraction, multiplication, and division. Displays the result in a calculator.
 - Dice Rolling Simulator: Simulates the roll of a die.
 - Guess the Number: A game where the user tries to guess a randomly generated.
 - Mad Libs Generator: Creates a story based on user input.
 - Rock, paper, scissors: Classic game of rock, paper, scissors.
 
+### python-projects/pytest-plugin
+- Plugin for registering Pytest assert rewrite.
+
+### python-projects/test
+- Pytest test cases.
+
 ## Usage
 
 ```bash
+    # Easy challenges
     python easy/calculator.py
     python easy/dice_rolling_simulator.py
     python easy/guess_the_number.py
     python easy/mad_libs_generator.py
     python easy/rock_paper_scissors.py
+
+    # Pytest
+    export PYTHONPATH=/path/to/your/pytest_plugin:/path/to/your/bin/python
+    pytest -p src.pytest_plugin test/test_dictionary.py
 ```
 
 # Example Usage
@@ -78,6 +91,17 @@ Computer chose
 ---.__________)
 You win!
 Play again? (yes/no): yes
+
+pytest -p src.pytest_plugin test/test_dictionary.py
+...
+>       assert actual == expected, error_message
+E       AssertionError: The dictionaries are not equal!
+E         Omitting 13 identical items, use -vv to show
+E         Differing items:
+E         {'name': 'Alice'} != {'name': 'Bob'}
+E         Use -v to get more diff
+
+test/assertions.py:15: AssertionError
 ```
 
 ## References
