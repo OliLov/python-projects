@@ -1,22 +1,24 @@
 # Python Projects
 
-This project is a collection of Python projects.
+This repository is a collection of various Python projects, each showcasing different aspects and capabilities of Python programming. These projects are part of a 30-day Python challenge, where I am committed to writing articles on Python topics for 30 consecutive days. You can follow my journey and read these articles on my [Medium](https://medium.com/@oliver.lovstrom) blog. Each project in this collection is standalone and demonstrates various Python concepts.
 
 ## Projects
 
 ### python-projects/easy
-
 - Calculator: Performs basic arithmetic operations like addition, subtraction, multiplication, and division. Displays the result in a calculator.
 - Dice Rolling Simulator: Simulates the roll of a die.
-- Guess the Number: A game where the user tries to guess a randomly generated.
+- Guess the Number: A game where the user tries to guess a randomly generated number.
 - Mad Libs Generator: Creates a story based on user input.
 - Rock, paper, scissors: Classic game of rock, paper, scissors.
 
+### python-projects/health
+- Step Count: Extracting step count from Apple Health data, with different metrics for step count analysis.
+
 ### python-projects/pytest-plugin
-- Plugin for registering Pytest assert rewrite.
+- Pytest Plugin: Plugin for registering Pytest assert rewrite.
 
 ### python-projects/test
-- Pytest test cases.
+- Pytest Test Cases: Various test cases using Pytest.
 
 ## Usage
 
@@ -28,13 +30,17 @@ This project is a collection of Python projects.
     python easy/mad_libs_generator.py
     python easy/rock_paper_scissors.py
 
+    # Health
+    python health/step_count.py --help
+
     # Pytest
     export PYTHONPATH=/path/to/your/pytest_plugin:/path/to/your/bin/python
     pytest -p src.pytest_plugin test/test_dictionary.py
 ```
 
-# Example Usage
+## Example Usage
 
+### python-projects/easy
 ```
 $ python easy/calculator.py
 Enter an equation (or 'q' to quit): 1+2+3
@@ -91,7 +97,19 @@ Computer chose
 ---.__________)
 You win!
 Play again? (yes/no): yes
+```
 
+### python-projects/health
+
+```
+python health/step_count.py /path/to/your/apple_health_export/export.xml --steps 2000 --guideline 2000
+The day with the most steps is 2019-05-30 with 33387 steps.
+The longest streak of at least 2000 steps is 95 days, starting on 2023-09-12.
+```
+
+### python-projects/pytest-plugin
+
+```
 pytest -p src.pytest_plugin test/test_dictionary.py
 ...
 >       assert actual == expected, error_message
@@ -103,6 +121,13 @@ E         Use -v to get more diff
 
 test/assertions.py:15: AssertionError
 ```
+
+## Images
+
+### python-projects/health
+![Cumulative daily step count](/images/cumulative_steps.png)
+![Average steps per weekday](/images/weekday_guideline.png)
+![Daily Step Count Distribution](/images/distribution_guideline.png)
 
 ## References
 
