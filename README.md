@@ -9,6 +9,7 @@ This repository is a collection of various Python projects, each showcasing diff
 - Dice Rolling Simulator: Simulates the roll of a die.
 - Guess the Number: A game where the user tries to guess a randomly generated number.
 - Mad Libs Generator: Creates a story based on user input.
+- Palindrome Checker: Check if a phrase is a palindrome.
 - Rock, paper, scissors: Classic game of rock, paper, scissors.
 
 ### python-projects/health
@@ -29,6 +30,7 @@ This repository is a collection of various Python projects, each showcasing diff
     python easy/guess_the_number.py
     python easy/mad_libs_generator.py
     python easy/rock_paper_scissors.py
+    python easy/palindrome_checker.py --help
 
     # Health
     python health/step_count.py --help
@@ -77,6 +79,9 @@ Enter your guess:
 $ python easy/mad_libs_generator.py
 Enter prompt: There once was a cat
 Story: There once was a cat that seemed to run on the sidewalk for hours. Today it is a cat, not a dog. As in, it has to look like, well, the same cat that was sitting at one end. And the second time it did, it looked just like her; I found all of her bones missing and I asked, okay, what did she look like? And it looked like like a cat that would be out of shape.
+
+% python easy/palindrome_checker.py "EYE"
+The phrase EYE is a palindrome.
 
 $ python easy/rock_paper_scissors.py
 Choose Rock, Paper, or Scissors: scissors
