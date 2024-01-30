@@ -11,6 +11,7 @@ This repository is a collection of various Python projects, each showcasing diff
 - Mad Libs Generator: Creates a story based on user input.
 - Palindrome Checker: Check if a phrase is a palindrome.
 - Rock, paper, scissors: Classic game of rock, paper, scissors.
+- Text analysis: Count words and characters in a text.
 
 ### python-projects/health
 - Step Count: Extracting step count from Apple Health data, with different metrics for step count analysis.
@@ -31,6 +32,7 @@ This repository is a collection of various Python projects, each showcasing diff
     python easy/mad_libs_generator.py
     python easy/rock_paper_scissors.py
     python easy/palindrome_checker.py --help
+    python easy/text_analysis.py --help
 
     # Health
     python health/step_count.py --help
@@ -102,6 +104,9 @@ Computer chose
 ---.__________)
 You win!
 Play again? (yes/no): yes
+
+$ python easy/text_analysis.py example.txt
+The file contains 4 words and 18 characters.
 ```
 
 ### python-projects/health
