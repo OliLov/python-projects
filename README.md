@@ -27,6 +27,7 @@ This repository is a collection of various Python projects, each showcasing diff
 ```bash
     # Easy challenges
     python easy/calculator.py
+    python easy/currency_converter.py --help
     python easy/dice_rolling_simulator.py
     python easy/fibonacci.py
     python easy/guess_the_number.py
@@ -64,6 +65,12 @@ Enter an equation (or 'q' to quit): 1+2+3
         | | . | 0 | = | | / | |
         | |___|___|___| |___| |
         |_____________________|
+
+$ python easy/currency_converter.py "API_URL"
+Convert USD to currency (Type 'exit' to quit): SEK
+Amount in USD: 100
+100.0 USD is 1039.6924999999999 SEK.
+Convert USD to currency (Type 'exit' to quit): exit
 
 $ python easy/dice_rolling_simulator.py
 ._______.
