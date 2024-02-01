@@ -35,6 +35,7 @@ This repository is a collection of various Python projects, each showcasing diff
     python easy/rock_paper_scissors.py
     python easy/palindrome_checker.py --help
     python easy/text_analysis.py --help
+    python easy/web_scraper.py
 
     # Health
     python health/step_count.py --help
@@ -119,6 +120,9 @@ Play again? (yes/no): yes
 
 $ python easy/text_analysis.py example.txt
 The file contains 4 words and 18 characters.
+
+$ python easy/web_scraper.py
+Oliver Lövström – Medium
 ```
 
 ### python-projects/health
