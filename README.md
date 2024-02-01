@@ -28,6 +28,7 @@ This repository is a collection of various Python projects, each showcasing diff
     # Easy challenges
     python easy/calculator.py
     python easy/dice_rolling_simulator.py
+    python easy/fibonacci.py
     python easy/guess_the_number.py
     python easy/mad_libs_generator.py
     python easy/rock_paper_scissors.py
@@ -70,6 +71,10 @@ $ python easy/dice_rolling_simulator.py
 |   o   |
 | o   o |
 '-------'
+
+$ python easy/fibonacci.py
+Enter the length of the Fibonacci sequence: 1000
+Fibonacci sequence of length 1000 : [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...]
 
 $ python easy/guess_the_number.py
 Welcome to the Guess the Number Game!
@@ -134,7 +139,10 @@ test/assertions.py:15: AssertionError
 
 ## Images
 
-### python-projects/health
+### easy/fibonacci.py
+![Fibonacci spiral](/images/fibonacci.png)
+
+### health/step_count.py
 ![Cumulative daily step count](/images/cumulative_steps.png)
 ![Average steps per weekday](/images/weekday_guideline.png)
 ![Daily Step Count Distribution](/images/distribution_guideline.png)
