@@ -6,12 +6,15 @@ This repository is a collection of various Python projects, each showcasing diff
 
 ### python-projects/easy
 - Calculator: Performs basic arithmetic operations like addition, subtraction, multiplication, and division. Displays the result in a calculator.
+- Currency Converter: Convert amount in USD to your currency.
 - Dice Rolling Simulator: Simulates the roll of a die.
+- Fibonacci: Generate Fibonacci sequence and Fibonacci spiral.
 - Guess the Number: A game where the user tries to guess a randomly generated number.
 - Mad Libs Generator: Creates a story based on user input.
 - Palindrome Checker: Check if a phrase is a palindrome.
 - Rock, paper, scissors: Classic game of rock, paper, scissors.
 - Text analysis: Count words and characters in a text.
+- Web Scraper: Simple web scraper implementation.
 
 ### python-projects/health
 - Step Count: Extracting step count from Apple Health data, with different metrics for step count analysis.
