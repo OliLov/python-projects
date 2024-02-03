@@ -21,6 +21,7 @@ This repository is a collection of various Python projects, each showcasing diff
 
 ### python-projects/machine_learning
 - Object Detection Example: Performs object detection on example image.
+- Object Detection: Performs object detection on given image.
 
 ### python-projects/pytest_plugin
 - Pytest Plugin: Plugin for registering Pytest assert rewrite.
@@ -48,6 +49,7 @@ This repository is a collection of various Python projects, each showcasing diff
 
     # Machine Learning
     python machine_learning/object_detection_example.py
+    python machine_learning/object_detection.py --help
 
     # Pytest
     export PYTHONPATH=/path/to/your/pytest_plugin:/path/to/your/bin/python
@@ -138,14 +140,16 @@ Oliver Lövström – Medium
 ### python-projects/health
 
 ```
-python health/step_count.py /path/to/your/apple_health_export/export.xml --steps 2000 --guideline 2000
+$ python health/step_count.py /path/to/your/apple_health_export/export.xml --steps 2000 --guideline 2000
 The day with the most steps is 2019-05-30 with 33387 steps.
 The longest streak of at least 2000 steps is 95 days, starting on 2023-09-12.
 ```
 
 ### python-projects/machine_learning
 ```
-python machine_learning/object_detection_example.py
+$ python machine_learning/object_detection_example.py
+
+$ python machine_learning/object_detection.py images/pedestrian_crossing.jpg --output images/pedestrian_crossing_output.jpg
 ```
 
 ### python-projects/pytest_plugin
