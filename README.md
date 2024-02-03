@@ -19,6 +19,9 @@ This repository is a collection of various Python projects, each showcasing diff
 ### python-projects/health
 - Step Count: Extracting step count from Apple Health data, with different metrics for step count analysis.
 
+### python-projects/image_analysis
+- Annotate Blood Cells: Annotate blood smear images using XML file. Currently, parses files according to the format in [Complete Blood Cell Count Dataset](https://github.com/MahmudulAlam/Complete-Blood-Cell-Count-Dataset/tree/master)
+
 ### python-projects/machine_learning
 - Object Detection Example: Performs object detection on example image.
 - Object Detection: Performs object detection on given image.
@@ -46,6 +49,9 @@ This repository is a collection of various Python projects, each showcasing diff
 
     # Health
     python health/step_count.py --help
+
+    # Image Analysis
+    python image_analysis/annotate_blood_cells.py --help
 
     # Machine Learning
     python machine_learning/object_detection_example.py
@@ -145,6 +151,11 @@ The day with the most steps is 2019-05-30 with 33387 steps.
 The longest streak of at least 2000 steps is 95 days, starting on 2023-09-12.
 ```
 
+### python-projects/image_analysis
+```
+$ python image_analysis/annotate_blood_cells.py IMAGE XML
+```
+
 ### python-projects/machine_learning
 ```
 $ python machine_learning/object_detection_example.py
@@ -177,11 +188,14 @@ test/assertions.py:15: AssertionError
 ![Average steps per weekday](/images/weekday_guideline.png)
 ![Daily Step Count Distribution](/images/distribution_guideline.png)
 
+### image_analysis/annotate_blood_cells.py
+![Annotate Blood Cells](/images/blood_cells_example.png)
+
 ### machine_learning/object_detection_example.py
-![Pedestrian crossing](/images/pedestrian_crossing.jpg)
+![Pedestrian Crossing](/images/pedestrian_crossing.jpg)
 Image credit: [Photo by Mitchell Luo on Unsplash](https://unsplash.com/photos/a-group-of-people-walking-across-a-street-o7DGTER0POE)
 
-![Pedestrian crossing output](/images/pedestrian_crossing_output.jpg)
+![Pedestrian Crossing Output](/images/pedestrian_crossing_output.jpg)
 
 ## References
 
