@@ -19,7 +19,10 @@ This repository is a collection of various Python projects, each showcasing diff
 ### python-projects/health
 - Step Count: Extracting step count from Apple Health data, with different metrics for step count analysis.
 
-### python-projects/pytest-plugin
+### python-projects/machine_learning
+- Object Detection Example: Performs object detection on example image.
+
+### python-projects/pytest_plugin
 - Pytest Plugin: Plugin for registering Pytest assert rewrite.
 
 ### python-projects/test
@@ -28,7 +31,7 @@ This repository is a collection of various Python projects, each showcasing diff
 ## Usage
 
 ```bash
-    # Easy challenges
+    # Easy Challenges
     python easy/calculator.py
     python easy/currency_converter.py --help
     python easy/dice_rolling_simulator.py
@@ -43,12 +46,16 @@ This repository is a collection of various Python projects, each showcasing diff
     # Health
     python health/step_count.py --help
 
+    # Machine Learning
+    python machine_learning/object_detection_example.py
+
     # Pytest
     export PYTHONPATH=/path/to/your/pytest_plugin:/path/to/your/bin/python
     pytest -p src.pytest_plugin test/test_dictionary.py
 ```
 
 ## Example Usage
+For visuals, see output in [Images](#image-section)
 
 ### python-projects/easy
 ```
@@ -136,7 +143,12 @@ The day with the most steps is 2019-05-30 with 33387 steps.
 The longest streak of at least 2000 steps is 95 days, starting on 2023-09-12.
 ```
 
-### python-projects/pytest-plugin
+### python-projects/machine_learning
+```
+python machine_learning/object_detection_example.py
+```
+
+### python-projects/pytest_plugin
 
 ```
 pytest -p src.pytest_plugin test/test_dictionary.py
@@ -151,7 +163,7 @@ E         Use -v to get more diff
 test/assertions.py:15: AssertionError
 ```
 
-## Images
+## Images <a name="image-section"></a>
 
 ### easy/fibonacci.py
 ![Fibonacci spiral](/images/fibonacci.png)
@@ -160,6 +172,12 @@ test/assertions.py:15: AssertionError
 ![Cumulative daily step count](/images/cumulative_steps.png)
 ![Average steps per weekday](/images/weekday_guideline.png)
 ![Daily Step Count Distribution](/images/distribution_guideline.png)
+
+### machine_learning/object_detection_example.py
+![Pedestrian crossing](/images/pedestrian_crossing.jpg)
+Image credit: [Photo by Mitchell Luo on Unsplash](https://unsplash.com/photos/a-group-of-people-walking-across-a-street-o7DGTER0POE)
+
+![Pedestrian crossing output](/images/pedestrian_crossing_output.jpg)
 
 ## References
 
