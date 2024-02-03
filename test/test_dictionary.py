@@ -1,4 +1,5 @@
 """Test dictionary."""
+
 from test.assertions import is_eq
 
 

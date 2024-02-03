@@ -1,4 +1,5 @@
 """Object detection example."""
+
 import cv2
 import cvlib
 from cvlib.object_detection import draw_bbox

@@ -1,4 +1,5 @@
 """Assertions."""
+
 import logging
 from typing import Any
 

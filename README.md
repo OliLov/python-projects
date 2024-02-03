@@ -129,7 +129,7 @@ You win!
 Play again? (yes/no): yes
 
 $ python easy/text_analysis.py example.txt
-The file contains 4 words and 18 characters.
+The file has 4 words and 18 characters.
 
 $ python easy/web_scraper.py
 Oliver Lövström – Medium

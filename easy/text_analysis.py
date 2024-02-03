@@ -1,4 +1,5 @@
 """Text analysis."""
+
 # pylint: disable=unspecified-encoding
 import argparse
 
@@ -33,7 +34,7 @@ def main(file_path: str) -> None:
     """
     word_count = count_words(file_path)
     character_count = count_characters(file_path)
-    print(f"The file contains {word_count} words and {character_count} characters.")
+    print(f"The file has {word_count} words and {character_count} characters.")
 
 
 if __name__ == "__main__":

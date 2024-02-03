@@ -1,4 +1,5 @@
 """Step count."""
+
 import argparse
 import xml.etree.ElementTree as ET
 from collections import defaultdict
@@ -118,7 +119,9 @@ def plot_cumulative_steps(daily_steps: defaultdict[datetime, int]) -> None:
     plt.tight_layout()
 
 
-def plot_average_steps_per_weekday(daily_steps: defaultdict[datetime, int]) -> None:
+def plot_average_steps_per_weekday(
+    daily_steps: defaultdict[datetime, int]
+) -> None:
     """Plot average steps per weekday.
 
     :param daily_steps: Dictionary with the dates and respective step count.
@@ -154,7 +157,9 @@ def plot_average_steps_per_weekday(daily_steps: defaultdict[datetime, int]) -> N
     plt.tight_layout()
 
 
-def plot_daily_step_distribution(daily_steps: defaultdict[datetime, int]) -> None:
+def plot_daily_step_distribution(
+    daily_steps: defaultdict[datetime, int]
+) -> None:
     """Plot daily step count distribution.
 
     :param daily_steps: Dictionary with the dates and respective step count.
@@ -191,7 +196,9 @@ def load_data(file_path: str) -> defaultdict[datetime, int]:
 
     daily_steps = defaultdict(int)
 
-    records = root.findall(".//Record[@type='HKQuantityTypeIdentifierStepCount']")
+    records = root.findall(
+        ".//Record[@type='HKQuantityTypeIdentifierStepCount']"
+    )
     for record in records:
         start_date = record.get("startDate")
         value = int(record.get("value"))
@@ -202,7 +209,10 @@ def load_data(file_path: str) -> defaultdict[datetime, int]:
 
 
 def main(
-    file_path: str, metrics: list[str], steps: Optional[int], guideline: Optional[int]
+    file_path: str,
+    metrics: list[str],
+    steps: Optional[int],
+    guideline: Optional[int],
 ) -> None:
     """Main function.
 
@@ -216,8 +226,9 @@ def main(
     most_steps_date, most_steps_count = day_with_most_steps(daily_steps)
     print(
         (
-            f"The day with the most steps is {most_steps_date.strftime('%Y-%m-%d')} "
-            f"with {most_steps_count} steps."
+            f"The day with the most steps is "
+            f"{most_steps_date.strftime('%Y-%m-%d')} with "
+            f"{most_steps_count} steps."
         )
     )
 
@@ -244,7 +255,8 @@ def main(
         print(
             (
                 f"The longest streak of at least {steps} steps is "
-                f"{longest_streak_length} days, starting on {longest_streak_start}."
+                f"{longest_streak_length} days, starting on "
+                f"{longest_streak_start}."
             )
         )
     elif not metrics or "streak" in metrics:
@@ -262,7 +274,8 @@ if __name__ == "__main__":
     parser.add_argument("file_path", type=str, help=FILE_PATH_HELP)
 
     METRICS_HELP = (
-        "Specify one or more health metrics: cumulative, weekday, distribution, streak"
+        "Specify one or more health metrics: cumulative, weekday, "
+        "distribution, streak"
     )
     parser.add_argument(
         "-m",
@@ -272,7 +285,8 @@ if __name__ == "__main__":
     )
 
     STEPS_HELP = (
-        "Specify the minimum number of steps for calculating the longest streak"
+        "Specify the minimum number of steps for calculating the longest "
+        "streak"
     )
     parser.add_argument(
         "-s",

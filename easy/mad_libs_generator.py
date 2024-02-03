@@ -1,4 +1,5 @@
 """Mad libs generator."""
+
 # pylint: disable=E0401
 from transformers import GPT2LMHeadModel, GPT2Tokenizer, pipeline
 

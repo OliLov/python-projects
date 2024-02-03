@@ -1,4 +1,5 @@
 """Rock, paper, scissors."""
+
 import random
 import time
 

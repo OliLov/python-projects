@@ -1,16 +1,19 @@
 """Curreny converter."""
+
 import argparse
 from typing import Optional
 
 import requests
 
 
-def fetch_usd_exchange_rate(api_url: str, target_currency: str) -> Optional[float]:
+def fetch_usd_exchange_rate(
+    api_url: str, target_currency: str
+) -> Optional[float]:
     """Fetch the USD exchange rate for a target currency.
 
     :param api_url: API URL including the API key.
     :param target_currency: The target currency to fetch the exchange rate for.
-    :return: The exchange rate for the target currency in USD or `None` if not found.
+    :return: The exchange rate for the target currency in USD or `None`.
     """
     try:
         response = requests.get(api_url, timeout=120)
@@ -44,7 +47,9 @@ def main(api_url: str) -> None:
     :param api_url: API URL including the API key.
     """
     while True:
-        target_currency = input("Convert USD to currency (Type 'exit' to quit): ")
+        target_currency = input(
+            "Convert USD to currency (Type 'exit' to quit): "
+        )
         if target_currency.lower() == "exit":
             break
 
@@ -54,9 +59,7 @@ def main(api_url: str) -> None:
             if target_amount is not None:
                 print(f"{amount} USD is {target_amount} {target_currency}.")
             else:
-                print(
-                    "Failed to convert currency. Please check your inputs and try again."
-                )
+                print("Failed to convert currency. Please check your inputs.")
         except ValueError:
             print("Please enter a valid amount.")
 

@@ -1,4 +1,5 @@
 """Palindrome checker."""
+
 import argparse
 
 
@@ -35,8 +36,12 @@ if __name__ == "__main__":
     PHRASE_HELP = "The phrase to check if it is a palindrome"
     parser.add_argument("phrase", type=str, help=PHRASE_HELP)
 
-    ADVANCED_HELP = "Enable advanced checking (ignores spaces, punctuation, and case)"
-    parser.add_argument("-a", "--advanced", action="store_true", help=ADVANCED_HELP)
+    ADVANCED_HELP = (
+        "Enable advanced checking (ignores spaces, punctuation, and case)"
+    )
+    parser.add_argument(
+        "-a", "--advanced", action="store_true", help=ADVANCED_HELP
+    )
 
     args = parser.parse_args()
     main(args.phrase, args.advanced)
