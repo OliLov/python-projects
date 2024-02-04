@@ -45,7 +45,13 @@ def draw_bounding_boxes(
     """
     for ann in annotations:
         xmin, ymin, xmax, ymax = ann["bndbox"].values()
-        color = (255, 0, 0) if ann["name"] == "WBC" else (0, 255, 0)
+        # Update color coding to include platelets
+        if ann["name"] == "RBC":
+            color = (255, 0, 0)  # Red for RBC
+        elif ann["name"] == "WBC":
+            color = (0, 0, 255)  # Blue for WBC
+        else:
+            color = (0, 255, 0)  # Green for Platelets
         cv2.rectangle(image, (xmin, ymin), (xmax, ymax), color, 2)
         cv2.putText(
             image,
