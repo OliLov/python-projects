@@ -25,6 +25,7 @@ This repository is a collection of various Python projects, each showcasing diff
 ### python-projects/machine_learning
 - Object Detection Example: Performs object detection on example image.
 - Object Detection: Performs object detection on given image.
+- Convert Dataset: Convert dataset from PASCAL VOC XML format to YOLO format.
 
 ### python-projects/pytest_plugin
 - Pytest Plugin: Plugin for registering Pytest assert rewrite.
@@ -56,6 +57,7 @@ This repository is a collection of various Python projects, each showcasing diff
     # Machine Learning
     python machine_learning/object_detection_example.py
     python machine_learning/object_detection.py --help
+    python machine_learning/convert_dataset.py --help
 
     # Pytest
     export PYTHONPATH=/path/to/your/pytest_plugin:/path/to/your/bin/python
@@ -161,6 +163,8 @@ $ python image_analysis/annotate_blood_cells.py IMAGE XML
 $ python machine_learning/object_detection_example.py
 
 $ python machine_learning/object_detection.py images/pedestrian_crossing.jpg --output images/pedestrian_crossing_output.jpg
+
+$ python machine_learning/convert_dataset.py path/to/your/Complete-Blood-Cell-Count-Dataset/Training/Annotations yolo_data/training
 ```
 
 ### python-projects/pytest_plugin
