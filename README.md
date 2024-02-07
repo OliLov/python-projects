@@ -27,6 +27,9 @@ This repository is a collection of various Python projects, each showcasing diff
 - Object Detection: Performs object detection on given image.
 - Convert Dataset: Convert dataset from PASCAL VOC XML format to YOLO format.
 
+### python-projects/notebooks
+- Blood Count Yolo: Code for fine-tuning YOLOv8 on blood smear data.
+
 ### python-projects/pytest_plugin
 - Pytest Plugin: Plugin for registering Pytest assert rewrite.
 
