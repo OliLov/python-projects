@@ -26,6 +26,7 @@ This repository is a collection of various Python projects, each showcasing diff
 - Object Detection Example: Performs object detection on example image.
 - Object Detection: Performs object detection on given image.
 - Convert Dataset: Convert dataset from PASCAL VOC XML format to YOLO format.
+- Webcam Hand Draw: Simple script for drawing on webcam using MediaPipe.
 
 ### python-projects/notebooks
 - Blood Count Yolo: Code for fine-tuning YOLOv8 on blood smear data.
@@ -61,6 +62,7 @@ This repository is a collection of various Python projects, each showcasing diff
     python machine_learning/object_detection_example.py
     python machine_learning/object_detection.py --help
     python machine_learning/convert_dataset.py --help
+    python machine_learning/webcam_hand_draw.py
 
     # Pytest
     export PYTHONPATH=/path/to/your/pytest_plugin:/path/to/your/bin/python
@@ -168,6 +170,8 @@ $ python machine_learning/object_detection_example.py
 $ python machine_learning/object_detection.py images/pedestrian_crossing.jpg --output images/pedestrian_crossing_output.jpg
 
 $ python machine_learning/convert_dataset.py path/to/your/Complete-Blood-Cell-Count-Dataset/Training/Annotations yolo_data/training
+
+$ python machine_learning/webcam_hand_draw.py
 ```
 
 ### python-projects/pytest_plugin
@@ -202,7 +206,8 @@ test/assertions.py:15: AssertionError
 ![Pedestrian Crossing](/images/pedestrian_crossing.jpg)
 Image credit: [Photo by Mitchell Luo on Unsplash](https://unsplash.com/photos/a-group-of-people-walking-across-a-street-o7DGTER0POE)
 
-![Pedestrian Crossing Output](/images/pedestrian_crossing_output.jpg)
+### machine_learning/webcam_hand_draw.py
+![Webcam Hand Draw](/images/webcam_hand_draw.jpg)
 
 ## References
 
