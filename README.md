@@ -6,6 +6,7 @@ This repository is a collection of various Python projects, each showcasing diff
 
 ### python-projects/data_extraction
 - HTML zip extractor to CSV: Opens a zip file to extract the names of HTML files contained within. It then creates a CSV file with the following format: [File name, Views, Reads]
+- Large files to CSV: Sorts large files by date into a CSV from a directory.
 
 ### python-projects/easy
 - Calculator: Performs basic arithmetic operations like addition, subtraction, multiplication, and division. Displays the result in a calculator.
@@ -45,6 +46,7 @@ This repository is a collection of various Python projects, each showcasing diff
 ```bash
 # Data Extraction
 python data_extraction/html_zip_extractor_to_csv.py --help
+python data_extraction/large_files_to_csv.py --help
 
 # Easy Challenges
 python easy/calculator.py
@@ -81,6 +83,8 @@ For visuals, see output in [Images](#image-section)
 ### python-projects/data_extraction
 ```
 $ python data_extraction/html_zip_extractor_to_csv.py your.zip
+
+$ python data_extraction/large_files_to_csv.py your_directory/
 ```
 
 ### python-projects/easy
