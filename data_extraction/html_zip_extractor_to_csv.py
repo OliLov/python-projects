@@ -1,4 +1,4 @@
-"""Create CSV.
+"""HTML zip extractor to CSV.
 
 Opens a zip file to extract the names of HTML files contained within.
 It then creates a CSV file with the following format: [File name, Views, Reads]
@@ -19,13 +19,10 @@ def extract_file_names(zip_file_path: Path) -> list[str]:
     """
     titles = []
     with ZipFile(zip_file_path, "r") as zip_ref:
-        # Extract zip to a temporary directory
-        temp_dir = Path(zip_file_path.parent, "temp_extracted")
+        temp_dir = Path(zip_file_path.parent, "temp")
         zip_ref.extractall(temp_dir)
 
-        # Identify HTML files within the extracted structure
         for file_path in temp_dir.rglob("*.html"):
-            # Extract title from the filename using pathlib operations
             titles.append(file_path.name)
 
         # Cleanup extracted files
@@ -34,17 +31,17 @@ def extract_file_names(zip_file_path: Path) -> list[str]:
     return titles
 
 
-def create_csv_file(titles: list[str], csv_file_path: str) -> None:
-    """Create a CSV file with the given titles.
+def create_csv_file(file_names: list[str], csv_file_path: str) -> None:
+    """Create a CSV file with the given file names.
 
-    :param titles: The titles to include in the CSV file.
+    :param file_names: The file names to include in the CSV file.
     :param csv_file_path: Path to the CSV output file.
     """
     with open(csv_file_path, "w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
-        writer.writerow(["File", "Views", "Reads"])  # Write the header row
-        for title in titles:
-            writer.writerow([title, "0", "0"])  # Write each title
+        writer.writerow(["File", "Views", "Reads"])
+        for file_name in file_names:
+            writer.writerow([file_name, "0", "0"])
 
 
 def main(zip_file_path: Path) -> None:
@@ -55,9 +52,9 @@ def main(zip_file_path: Path) -> None:
     csv_file_name = zip_file_path.stem + ".csv"
     csv_file_path = zip_file_path.parent.joinpath(csv_file_name)
 
-    titles = extract_file_names(zip_file_path)
-    if titles:
-        create_csv_file(titles, csv_file_path)
+    file_names = extract_file_names(zip_file_path)
+    if file_names:
+        create_csv_file(file_names, csv_file_path)
         print(f"CSV file created successfully at {csv_file_path}")
     else:
         print("No titles were extracted.")
