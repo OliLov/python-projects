@@ -17,18 +17,17 @@ def extract_file_names(zip_file_path: Path) -> list[str]:
     :param zip_file_path: Path to zip file.
     :return: List of HTML file names.
     """
-    titles = []
+    file_names = []
     with ZipFile(zip_file_path, "r") as zip_ref:
         temp_dir = Path(zip_file_path.parent, "temp")
         zip_ref.extractall(temp_dir)
 
         for file_path in temp_dir.rglob("*.html"):
-            titles.append(file_path.name)
+            file_names.append(file_path.name)
 
-        # Cleanup extracted files
         shutil.rmtree(temp_dir)
 
-    return titles
+    return file_names
 
 
 def create_csv_file(file_names: list[str], csv_file_path: str) -> None:
@@ -57,13 +56,13 @@ def main(zip_file_path: Path) -> None:
         create_csv_file(file_names, csv_file_path)
         print(f"CSV file created successfully at {csv_file_path}")
     else:
-        print("No titles were extracted.")
+        print("No file names were extracted.")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description=(
-            "Extract titles from HTML files in a zip archive and save to a "
+            "Extract file name from HTML files in a zip archive and save to a "
             "CSV file."
         )
     )
