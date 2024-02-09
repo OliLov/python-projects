@@ -4,6 +4,9 @@ This repository is a collection of various Python projects, each showcasing diff
 
 ## Projects
 
+### python-projects/data_extraction
+- HTML zip extractor to CSV: Opens a zip file to extract the names of HTML files contained within. It then creates a CSV file with the following format: [File name, Views, Reads]
+
 ### python-projects/easy
 - Calculator: Performs basic arithmetic operations like addition, subtraction, multiplication, and division. Displays the result in a calculator.
 - Currency Converter: Convert amount in USD to your currency.
@@ -40,37 +43,45 @@ This repository is a collection of various Python projects, each showcasing diff
 ## Usage
 
 ```bash
-    # Easy Challenges
-    python easy/calculator.py
-    python easy/currency_converter.py --help
-    python easy/dice_rolling_simulator.py
-    python easy/fibonacci.py
-    python easy/guess_the_number.py
-    python easy/mad_libs_generator.py
-    python easy/rock_paper_scissors.py
-    python easy/palindrome_checker.py --help
-    python easy/text_analysis.py --help
-    python easy/web_scraper.py
+# Data Extraction
+python data_extraction/html_zip_extractor_to_csv.py --help
 
-    # Health
-    python health/step_count.py --help
+# Easy Challenges
+python easy/calculator.py
+python easy/currency_converter.py --help
+python easy/dice_rolling_simulator.py
+python easy/fibonacci.py
+python easy/guess_the_number.py
+python easy/mad_libs_generator.py
+python easy/rock_paper_scissors.py
+python easy/palindrome_checker.py --help
+python easy/text_analysis.py --help
+python easy/web_scraper.py
 
-    # Image Analysis
-    python image_analysis/annotate_blood_cells.py --help
+# Health
+python health/step_count.py --help
 
-    # Machine Learning
-    python machine_learning/object_detection_example.py
-    python machine_learning/object_detection.py --help
-    python machine_learning/convert_dataset.py --help
-    python machine_learning/webcam_hand_draw.py
+# Image Analysis
+python image_analysis/annotate_blood_cells.py --help
 
-    # Pytest
-    export PYTHONPATH=/path/to/your/pytest_plugin:/path/to/your/bin/python
-    pytest -p src.pytest_plugin test/test_dictionary.py
+# Machine Learning
+python machine_learning/object_detection_example.py
+python machine_learning/object_detection.py --help
+python machine_learning/convert_dataset.py --help
+python machine_learning/webcam_hand_draw.py
+
+# Pytest
+export PYTHONPATH=/path/to/your/pytest_plugin:/path/to/your/bin/python
+pytest -p src.pytest_plugin test/test_dictionary.py
 ```
 
 ## Example Usage
 For visuals, see output in [Images](#image-section)
+
+### python-projects/data_extraction
+```
+$ python data_extraction/html_zip_extractor_to_csv.py your.zip
+```
 
 ### python-projects/easy
 ```
