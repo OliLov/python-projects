@@ -23,6 +23,16 @@ def parse_date(file_name: str) -> datetime:
     return datetime.strptime(date_str, "%Y-%m-%d")
 
 
+def is_date_prefixed(file_name: str) -> bool:
+    """Determines if a file name starts with a date in 'YYYY-MM-DD' format.
+
+    :param file_name: The name of the file to check.
+    :return: `True` if the file name starts with a date, otherwise `False`.
+    """
+    date_pattern = r"^\d{4}-\d{2}-\d{2}_"
+    return bool(re.match(date_pattern, file_name))
+
+
 def sort_csv_entries(csv_file_path: Path) -> None:
     """Sorts entries in a CSV file by date.
 
@@ -41,16 +51,6 @@ def sort_csv_entries(csv_file_path: Path) -> None:
         writer = csv.writer(file)
         writer.writerow(header)
         writer.writerows(sorted_entries)
-
-
-def is_date_prefixed(file_name: str) -> bool:
-    """Determines if a file name starts with a date in 'YYYY-MM-DD' format.
-
-    :param file_name: The name of the file to check.
-    :return: `True` if the file name starts with a date, otherwise `False`.
-    """
-    date_pattern = r"^\d{4}-\d{2}-\d{2}_"
-    return bool(re.match(date_pattern, file_name))
 
 
 def list_large_files(
