@@ -32,6 +32,12 @@ This repository is a collection of various Python projects, each showcasing diff
 - Convert Dataset: Convert dataset from PASCAL VOC XML format to YOLO format.
 - Webcam Hand Draw: Simple script for drawing on webcam using MediaPipe.
 
+### python-projects/medium
+- Medium Post Analysis: Comprehensive analysis of Medium posts. The script will output a series of plots illustrating various aspects of the
+data, such as the distribution of reads and views, and correlations between
+post characteristics and engagement metrics.
+- Medium Statistics Plots: Helper module to plot Medium statistics.
+
 ### python-projects/notebooks
 - Blood Count Yolo: Code for fine-tuning YOLOv8 on blood smear data.
 
@@ -71,6 +77,9 @@ python machine_learning/object_detection_example.py
 python machine_learning/object_detection.py --help
 python machine_learning/convert_dataset.py --help
 python machine_learning/webcam_hand_draw.py
+
+# Medium
+python medium_post_analysis.py --help
 
 # Pytest
 export PYTHONPATH=/path/to/your/pytest_plugin:/path/to/your/bin/python
@@ -189,6 +198,11 @@ $ python machine_learning/convert_dataset.py path/to/your/Complete-Blood-Cell-Co
 $ python machine_learning/webcam_hand_draw.py
 ```
 
+### python-projects/medium
+```
+$ python medium/medium_post_analysis.py path/to/your/Posts/ path/to/your/CSV
+```
+
 ### python-projects/pytest_plugin
 
 ```
@@ -223,6 +237,11 @@ Image credit: [Photo by Mitchell Luo on Unsplash](https://unsplash.com/photos/a-
 
 ### machine_learning/webcam_hand_draw.py
 ![Webcam Hand Draw](/images/webcam_hand_draw.jpg)
+
+### medium/medium_post_analysis.py
+![Publishing Day](/images/publishing_day.png)
+![Read-to-View Ratio](/images/read-to-view_ratio.png)
+![Sentiment Correlation](/images/sentiment_correlation.png)
 
 ## References
 
