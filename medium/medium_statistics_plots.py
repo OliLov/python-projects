@@ -128,15 +128,15 @@ class MediumStatisticsPlotter:
         plt.tight_layout()
         plt.show()
 
-    def plot_reads_distribution(self):
+    def plot_reads_distribution(self) -> None:
         """Plots the distribution of reads across Medium posts."""
         self.__plot_distributions("Reads", "Distribution of reads", "Reads")
 
-    def plot_views_distribution(self):
+    def plot_views_distribution(self) -> None:
         """Plots the distribution of views across Medium posts."""
         self.__plot_distributions("Views", "Distribution of views", "Views")
 
-    def plot_reads_to_views(self):
+    def plot_reads_to_views(self) -> None:
         """Plots the reads to views ratio"""
         plt.figure(figsize=(12, 8))
 
@@ -185,7 +185,9 @@ class MediumStatisticsPlotter:
         plt.tight_layout()
         plt.show()
 
-    def plot_correlation_between(self, attribute1: str, attribute2: str):
+    def plot_correlation_between(
+        self, attribute1: str, attribute2: str
+    ) -> None:
         """Plots the correlation between two specified attributes.
 
         :param attribute1: The first attribute for comparison.
@@ -199,7 +201,7 @@ class MediumStatisticsPlotter:
             title=f"{attribute1} vs. {attribute2}",
         )
 
-    def plot_weekday_reads_correlation(self):
+    def plot_weekday_reads_correlation(self) -> None:
         """Average reads and the weekday of publishing correlation."""
         plt.figure(figsize=(10, 6))
 
@@ -225,9 +227,7 @@ class MediumStatisticsPlotter:
         sns.barplot(
             x=weekday_reads_avg.index,
             y=weekday_reads_avg.values,
-            palette=cycle(
-                ["#00ffd0", "#ff00ab", "#ffae00", "#00ff15", "#00c3ff"]
-            ),
+            palette=color_cycle,
         )
 
         plt.title("Average reads by weekday")

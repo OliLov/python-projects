@@ -66,8 +66,14 @@ def extract_title_and_date(file_name: str) -> tuple[str, datetime]:
         else None
     )
 
-    title = title.rsplit("-", 1)[0] if title else title
-    title = title.rsplit(".", 1)[0] if title else title
+    if title:
+        title_parts = title.rsplit(" ", 1)
+        if len(title_parts) > 1:
+            title = title_parts[0]
+        else:
+            title_parts = title.rsplit(".", 1)
+            if len(title_parts) > 1:
+                title = title_parts[0]
 
     return title, date
 
