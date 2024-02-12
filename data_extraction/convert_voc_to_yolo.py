@@ -3,12 +3,11 @@
 import argparse
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from typing import List, Tuple
 
 
 def convert_bbox_to_yolo(
-    size: Tuple[int, int], box: Tuple[float, float, float, float]
-) -> Tuple[float, float, float, float]:
+    size: tuple[int, int], box: tuple[float, float, float, float]
+) -> tuple[float, float, float, float]:
     """Convert bounding box coordinates from PASCAL VOC format to YOLO format.
 
     :param size: A tuple of the image size: (width, height)
@@ -28,7 +27,7 @@ def convert_bbox_to_yolo(
     return (rel_x_center, rel_y_center, rel_width, rel_height)
 
 
-def xml_to_txt(input_file: Path, output_txt: Path, classes: List[str]) -> None:
+def xml_to_txt(input_file: Path, output_txt: Path, classes: list[str]) -> None:
     """Parse an XML file in PASCAL VOC format and convert it to YOLO format.
 
     :param input_xml: Path to the input XML file.
