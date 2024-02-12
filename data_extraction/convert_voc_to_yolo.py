@@ -26,14 +26,30 @@ def convert_bbox_to_yolo(size: Tuple[int, int], box: Tuple[float, float, float, 
     return (rel_x_center, rel_y_center, rel_width, rel_height)
 
 
-def xml_to_txt(input_xml: Path, output_txt: Path, classes: List[str]) -> None:
+def xml_to_txt(input_file: Path, output_txt: Path, classes: List[str]) -> None:
     """Parse an XML file in PASCAL VOC format and convert it to YOLO format.
 
     :param input_xml: Path to the input XML file.
     :param output_txt: Path to the output .txt file in YOLO format.
     :param classes: A list of class names as strings.
     """
-    tree = ET.parse(input_xml)
+    if input_file.suffix == '.txt':
+        try:
+            # Attempt to parse the file content as XML
+            with input_file.open('r', encoding='utf-8') as file:
+                file_content = file.read()
+            root = ET.fromstring(file_content)
+        except ET.ParseError as e:
+            print(f"Error parsing {input_file}: {e}")
+            return  # Skip this file and continue with the next
+    else:
+        try:
+            tree = ET.parse(input_file)
+            root = tree.getroot()
+        except ET.ParseError as e:
+            print(f"Error parsing {input_file}: {e}")
+            return  # Skip this file and continue with the next
+
     root = tree.getroot()
     size_element = root.find('size')
     image_width = int(size_element.find('width').text)
@@ -57,6 +73,7 @@ def xml_to_txt(input_xml: Path, output_txt: Path, classes: List[str]) -> None:
             file.write(f"{class_id} {' '.join(map(str, yolo_bbox))}\n")
 
 
+
 def main(input_dir: Path, output_dir: Path, classes_file: Path) -> None:
     """Convert dataset main function.
 
@@ -68,7 +85,7 @@ def main(input_dir: Path, output_dir: Path, classes_file: Path) -> None:
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    for xml_file in input_dir.glob('*.xml'):
+    for xml_file in input_dir.glob('*'):
         output_txt_path = output_dir / xml_file.with_suffix('.txt').name
         xml_to_txt(xml_file, output_txt_path, classes)
 
