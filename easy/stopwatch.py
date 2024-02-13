@@ -1,10 +1,10 @@
-"""Stop watch."""
+"""Stopwatch."""
 
 import time
 
 
 def stopwatch():
-    """Stop watch."""
+    """Stopwatch."""
     while True:
         choice = input("Press Enter to start the stopwatch, or 'q' to quit...")
         start_time = time.time()
