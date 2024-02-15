@@ -16,14 +16,12 @@ def convert_bbox_to_yolo(
     """
     dw = 1.0 / size[0]
     dh = 1.0 / size[1]
-    x_center = (box[0] + box[2]) / 2.0
-    y_center = (box[1] + box[3]) / 2.0
-    width = box[2] - box[0]
-    height = box[3] - box[1]
-    rel_x_center = x_center * dw
-    rel_width = width * dw
-    rel_y_center = y_center * dh
-    rel_height = height * dh
+
+    rel_x_center = (box[0] + box[2]) / 2.0 * dw
+    rel_y_center = (box[1] + box[3]) / 2.0 * dh
+    rel_width = (box[2] - box[0]) * dw
+    rel_height = (box[3] - box[1]) * dh
+
     return (rel_x_center, rel_y_center, rel_width, rel_height)
 
 
@@ -51,7 +49,6 @@ def xml_to_txt(input_file: Path, output_txt: Path, classes: list[str]) -> None:
             print(f"Error parsing {input_file}: {e}")
             return  # Skip this file and continue with the next
 
-    root = tree.getroot()
     size_element = root.find("size")
     image_width = int(size_element.find("width").text)
     image_height = int(size_element.find("height").text)
